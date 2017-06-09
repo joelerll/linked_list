@@ -1,0 +1,4 @@
+bin/prueba
+lib/*.so
+obj/*.o
+hacer.md
