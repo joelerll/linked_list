@@ -35,12 +35,12 @@ libmilista.so:
 	@ echo "Creada la libreria compartida milista"
 
 %.o : $(SRCDIR)/%.c
-		@ $(CC) $(CFLAGS) $(INCLUDE) -c $< -o $(OBJDIR)/$@
+	@ $(CC) $(CFLAGS) $(INCLUDE) -c $< -o $(OBJDIR)/$@
 
 .PHONY: clean
 clean:
-		@ rm -f obj/*.o bin/prueba lib/*.so
-		@ echo "Borrado los archivos"
+	@ rm -f obj/*.o bin/prueba lib/*.so
+	@ echo "Borrado los archivos"
 
 # https://stackoverflow.com/questions/7004702/how-can-i-create-a-makefile-for-c-projects-with-src-obj-and-bin-subdirectories
 # http://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html#fn:1
