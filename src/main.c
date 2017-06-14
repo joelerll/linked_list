@@ -5,7 +5,7 @@
 // ImprimirLista(ListaEnlazada *lista, int numeroElementos);
 int main(int argc, char const *argv[]) {
   ListaEnlazada lista;
-  int numeroElementos = 4;
+  int numeroElementos = 5;
   memset(&lista, 0, sizeof(ListaEnlazada)); // llenar de veros la lista
   Lista_Inicializar(&lista);
   long i = 2;

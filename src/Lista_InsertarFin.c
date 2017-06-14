@@ -8,7 +8,7 @@ int Lista_InsertarFin(ListaEnlazada *lista, void *objeto) {
     return 0;
   // int numero = Lista_Conteo(lista);
   // printf("%d\n",numero );
-  elemento->siguiente = NULL;
+  // elemento->siguiente = NULL;
   elemento->objeto = objeto;
   if (lista->numeroElementos == 0) {
 
@@ -25,9 +25,14 @@ int Lista_InsertarFin(ListaEnlazada *lista, void *objeto) {
     ancla->objeto = NULL;
     lista->ancla = *ancla;
   } else {
+    ElementoLista ancla = lista->ancla;
+    ElementoLista *ancla_puntero = &ancla;
     ElementoLista *ultimo = Lista_Ultimo(lista);
     ultimo->siguiente = elemento;
     elemento->anterior = ultimo;
+    elemento->siguiente = ancla_puntero;
+    ancla_puntero->anterior = elemento;
+
   }
   lista->numeroElementos++;
   return 1;
