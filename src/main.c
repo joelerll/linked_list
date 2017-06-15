@@ -2,32 +2,30 @@
 #include <stdlib.h>
 #include <string.h>
 #include "miLista.h"
-// ImprimirLista(ListaEnlazada *lista, int numeroElementos);
+void ImprimirLista(ListaEnlazada *lista, int numeroElementos);
 int main(int argc, char const *argv[]) {
   ListaEnlazada lista;
-  int numeroElementos = 5;
+  int numeroElementos = 6;
   memset(&lista, 0, sizeof(ListaEnlazada)); // llenar de veros la lista
   Lista_Inicializar(&lista);
   long i = 2;
 	for (i = 2; i < numeroElementos; i++){
 		Lista_InsertarFin(&lista, (void *)i);
 	}
+  // printf("lista: %p\n", &lista);
   int tam = Lista_Conteo(&lista);
-  printf("%d\n", tam);
+  printf("tamano: %d\n", tam);
+  ListaEnlazada *li = &lista;
+  ElementoLista ancla = li->ancla;
+  ElementoLista *ancla_p = &ancla;
+  ElementoLista *ant = ancla_p->anterior;
+  ElementoLista *sig = ancla_p->siguiente;
+  ElementoLista *intermedio = sig->siguiente;
+  long a = (long)(ant->objeto);
+  long s = (long)(sig->objeto);
+  long inter = (long)(intermedio->objeto);
+  printf("primero: %d\n", s);
+  printf("intermedio: %d\n", inter);
+  printf("ultimo: %d\n", a);
   return 0;
 }
-
-// void ImprimirLista(ListaEnlazada *lista, int numeroElementos){
-//
-// 	if (Lista_Conteo(lista) != numeroElementos){
-// 		printf("ImprimirLista: Error. Numero de elementos en lista incorrecto\n");
-// 		exit(-1);
-// 	}
-//
-// 	ElementoLista *elem = NULL;
-//
-// 	for (elem = Lista_Primero(lista); elem != NULL; elem = Lista_Siguiente(lista, elem)) {
-//
-// 		printf("%lu\n", (long)elem->objeto);
-// 	}
-// }

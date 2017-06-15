@@ -3,36 +3,33 @@
 #include <stdlib.h>
 int Lista_InsertarFin(ListaEnlazada *lista, void *objeto) {
   // definicion de Elementos de lista
-  ElementoLista *elemento = (ElementoLista *)malloc(sizeof(ElementoLista));
-  if (!elemento)
+  ElementoLista *nuevo = (ElementoLista *)malloc(sizeof(ElementoLista));
+  if (!nuevo)
     return 0;
   // int numero = Lista_Conteo(lista);
   // printf("%d\n",numero );
   // elemento->siguiente = NULL;
-  elemento->objeto = objeto;
+  nuevo->objeto = objeto;
   if (lista->numeroElementos == 0) {
 
-    // ElementoLista ancla = lista->ancla;
-    // ElementoLista *ancla_puntero = &ancla;
-    // ancla_puntero->anterior = elemento;
-    // ancla_puntero->siguiente = elemento;
+    ElementoLista *ancla = &(lista->ancla);
+    ancla->anterior = nuevo;
+    ancla->siguiente = nuevo;
 
-    ElementoLista *ancla = (ElementoLista *)malloc(sizeof(ElementoLista));
-    if (!ancla)
-      return 0;
-    ancla->siguiente = elemento;
-    ancla->anterior = elemento;
-    ancla->objeto = NULL;
-    lista->ancla = *ancla;
+    // ElementoLista *ancla = (ElementoLista *)malloc(sizeof(ElementoLista));
+    // if (!ancla)
+    //   return 0;
+    // ancla->siguiente = nuevo;
+    // ancla->anterior = nuevo;
+    // ancla->objeto = NULL;
+    // lista->ancla = *ancla;
   } else {
-    ElementoLista ancla = lista->ancla;
-    ElementoLista *ancla_puntero = &ancla;
-    ElementoLista *ultimo = Lista_Ultimo(lista);
-    ultimo->siguiente = elemento;
-    elemento->anterior = ultimo;
-    elemento->siguiente = ancla_puntero;
-    ancla_puntero->anterior = elemento;
-
+    ElementoLista *ancla = &(lista->ancla);
+    ElementoLista *ultimo = ancla->anterior;
+    nuevo->anterior = ultimo;
+    nuevo->siguiente = ancla;
+    ultimo->siguiente = nuevo;
+    ancla->anterior = nuevo;
   }
   lista->numeroElementos++;
   return 1;
