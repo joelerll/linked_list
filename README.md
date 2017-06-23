@@ -5,18 +5,18 @@
 _funciones_
 
 - [x] Lista_Inicializar
-- [ ] Lista_Vacia
+- [x] Lista_Vacia
 - [x] Lista_Conteo
 - [ ] Lista_Buscar
 - [x] Lista_InsertarFin
-- [ ] Lista_InsertarInicio
-- [ ] Lista_Sacar
+- [x] Lista_InsertarInicio
+- [x] Lista_Sacar
 - [ ] Lista_SacarTodos
 - [ ] Lista_InsertarDespues
 - [ ] Lista_InsertarAntes
-- [ ] Lista_Primero
+- [x] Lista_Primero
 - [x] Lista_Ultimo
-- [ ] Lista_Siguiente
+- [x] Lista_Siguiente
 - [ ] Lista_Anterior
 
 
