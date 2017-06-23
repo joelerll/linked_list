@@ -15,6 +15,8 @@ int Lista_InsertarInicio(ListaEnlazada *lista, void *objeto){
     ElementoLista *ancla = &(lista->ancla);
     ancla->anterior = nuevo;
     ancla->siguiente = nuevo;
+    nuevo->siguiente = ancla;
+    nuevo->anterior = ancla;
 
   } else {
     ElementoLista *ancla = &(lista->ancla);

@@ -1,6 +1,7 @@
 #include "miLista.h"
 #include <stdio.h>
 #include <stdlib.h>
+
 int Lista_Inicializar(ListaEnlazada *lista) {
   if (lista) {
     lista = (ListaEnlazada *)malloc(sizeof(ListaEnlazada));

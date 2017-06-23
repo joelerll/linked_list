@@ -1,0 +1,3 @@
+¿ancla->siguiente y ancla->anterior apuntan a NULL al momento de Inicializar_Lista?
+¿Lista_Buscar, como hace la comparación?
+void ImprimirLista(ListaEnlazada *lista, int numeroElementos){ ERROR
