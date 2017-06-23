@@ -56,6 +56,9 @@ int main(int argc, char const *argv[]) {
   ImprimirLista(li,Lista_Conteo(li));
 
 
+  ElementoLista *elementoBuscado = Lista_Buscar(li,(void *)1);
+  //printf("Se encontró elemento: %i\n",(int)elementoBuscado->objeto);
+
   //printf("lista: %p\n", &lista);
   /*
   int tam = Lista_Conteo(&lista);
