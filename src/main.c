@@ -27,11 +27,14 @@ int main(int argc, char const *argv[]) {
 
   //Prueba Lista_Primero, CORRECTO.
   ElementoLista *primero = Lista_Primero(li);
+  ElementoLista *segundo = Lista_Siguiente(li,primero);
   printf("Primer objeto: %i\n",(int)primero->objeto);
   //Prueba Lista_Siguiente, CORRECTO.
   ElementoLista *siguiente = Lista_Siguiente(li,primero);
   printf("Objeto siguiente a primer objeto: %i\n",(int)siguiente->objeto);
-
+  //Prueba Lista_Anterior, CORRECTO.
+  ElementoLista *anterior = Lista_Siguiente(li,segundo);
+  printf("Objeto anterior a segundo objeto(2): %i\n",(int)anterior->objeto);
   //  	
 
   //printf("lista: %p\n", &lista);
