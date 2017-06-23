@@ -17,7 +17,7 @@ _funciones_
 - [x] Lista_Primero
 - [x] Lista_Ultimo
 - [x] Lista_Siguiente
-- [ ] Lista_Anterior
+- [x] Lista_Anterior
 
 
 _otros_
