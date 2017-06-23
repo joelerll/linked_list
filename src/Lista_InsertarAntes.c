@@ -1,0 +1,22 @@
+#include "miLista.h"
+
+int Lista_InsertarAntes(ListaEnlazada *lista, void *objeto, ElementoLista *elemento){
+
+	if(lista->numeroElementos!=0){
+
+
+		ElementoLista *nuevo = (ElementoLista *)malloc(sizeof(ElementoLista));
+		ElementoLista *tmp = elemento->anterior;
+		nuevo->objeto=objeto;
+		nuevo->siguiente=elemento;
+		nuevo->anterior=tmp;
+		elemento->aterior=nuevo;
+		tmp->siguiente=nuevo;
+			
+		return 1;
+
+	}
+	return 0;
+
+
+}
