@@ -54,6 +54,14 @@ int main(int argc, char const *argv[]) {
   ElementoLista *nuevo = Lista_Siguiente(li,Lista_Siguiente(li,Lista_Primero(li)));
   printf("Se insertó 5 después de primer objeto. Elemento despues de 5 es: %i\n",(int)nuevo->objeto);
   ImprimirLista(li);
+
+//Prueba Lista_IntertarAntes, CORRECTO.
+  Lista_InsertarAntes(li,(void *)6,Lista_Primero(li));
+//  ElementoLista *nuevo = Lista_Siguiente(li,Lista_Siguiente(li,Lista_Primero(li)));
+//  printf("Se insertó 5 después de primer objeto. Elemento despues de 5 es: %i\n",(int)nuevo->objeto);
+  printf("Se insertó 6 antes del tercero\n");
+  ImprimirLista(li);
+
   //prueba Lista_Buscar
   ElementoLista *elementoBuscado = Lista_Buscar(li,(void *)1);
   printf("Se encontró elemento: %i\n",(int)elementoBuscado->objeto);

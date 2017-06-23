@@ -24,7 +24,7 @@ SOURCES_DINAMICO := $(shell ls src | egrep '^[A-Z]'| sed 's/^/src\//' | tr "\n" 
 all: todos libmilista.so
 
 todos: $(SOURCES) pruebaLista.o
-	@#gcc $(OBJECTS) $(PRUEBA_OBJ) -o $(BIN_NAME)
+	gcc $(OBJECTS) $(PRUEBA_OBJ) -o $(BIN_NAME)
 
 # Usado paraa pruebas locales
 test: $(SOURCES) main.o

@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "miLista.h"
 
 int Lista_InsertarAntes(ListaEnlazada *lista, void *objeto, ElementoLista *elemento){
@@ -10,7 +11,7 @@ int Lista_InsertarAntes(ListaEnlazada *lista, void *objeto, ElementoLista *eleme
 		nuevo->objeto=objeto;
 		nuevo->siguiente=elemento;
 		nuevo->anterior=tmp;
-		elemento->aterior=nuevo;
+		elemento->anterior=nuevo;
 		tmp->siguiente=nuevo;
 			
 		return 1;
