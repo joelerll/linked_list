@@ -3,7 +3,7 @@
 #include <string.h>
 #include "miLista.h"
 
-void ImprimirLista(ListaEnlazada *lista, int numeroElementos);
+void ImprimirLista(ListaEnlazada *lista);
 
 int main(int argc, char const *argv[]) {
   //Creación de lista
@@ -32,7 +32,7 @@ int main(int argc, char const *argv[]) {
   printf("Ultimo objeto: %i\n",(int)ant->objeto);
 
 
-  ImprimirLista(li,Lista_Conteo(li));
+  ImprimirLista(li);
 
   //Prueba Lista_Primero, CORRECTO.
   ElementoLista *primero = Lista_Primero(li);
@@ -48,16 +48,25 @@ int main(int argc, char const *argv[]) {
   Lista_Sacar(li,Lista_Primero(li));
   ElementoLista *primero1 = Lista_Primero(li);
   printf("Se sacó primer objeto. Primer objeto nuevo es: %i\n",(int)primero1->objeto);
-  ImprimirLista(li,Lista_Conteo(li));
+  ImprimirLista(li);
   //Prueba Lista_IntertarDespues, CORRECTO.
   Lista_InsertarDespues(li,(void *)5,Lista_Primero(li));
   ElementoLista *nuevo = Lista_Siguiente(li,Lista_Siguiente(li,Lista_Primero(li)));
   printf("Se insertó 5 después de primer objeto. Elemento despues de 5 es: %i\n",(int)nuevo->objeto);
-  ImprimirLista(li,Lista_Conteo(li));
-
-
+  ImprimirLista(li);
+  //prueba Lista_Buscar
   ElementoLista *elementoBuscado = Lista_Buscar(li,(void *)1);
-  //printf("Se encontró elemento: %i\n",(int)elementoBuscado->objeto);
+  printf("Se encontró elemento: %i\n",(int)elementoBuscado->objeto);
+  //prueba Lista_SacarTodos
+  Lista_SacarTodos(li);
+  ImprimirLista(li);
+  Lista_InsertarInicio(li, (void *)2);
+  Lista_InsertarInicio(li, (void *)2);
+  Lista_InsertarInicio(li, (void *)2);
+  Lista_InsertarInicio(li, (void *)2);
+  ImprimirLista(li);
+
+
 
   //printf("lista: %p\n", &lista);
   /*
@@ -81,17 +90,18 @@ int main(int argc, char const *argv[]) {
 
 }
 
-void ImprimirLista(ListaEnlazada *lista, int numeroElementos){
+void ImprimirLista(ListaEnlazada *lista){
 
-  if (Lista_Conteo(lista) != numeroElementos){
-    printf("ImprimirLista: Error. Numero de elementos en lista incorrecto\n");
-    exit(-1);
+
+  if(lista->numeroElementos!=0){
+    ElementoLista *elem = NULL;
+
+    for (elem = Lista_Primero(lista); elem->objeto != NULL; elem = Lista_Siguiente(lista, elem)) {
+      printf("%lu\n", (long)elem->objeto);
+    }  
+  }else{
+    printf("VACIO\n");
   }
 
-  ElementoLista *elem = NULL;
-
-  for (elem = Lista_Primero(lista); elem->objeto != NULL; elem = Lista_Siguiente(lista, elem)) {
-
-    printf("%lu\n", (long)elem->objeto);
-  }
+  
 }
