@@ -14,6 +14,8 @@ int Lista_InsertarAntes(ListaEnlazada *lista, void *objeto, ElementoLista *eleme
 		elemento->anterior=nuevo;
 		tmp->siguiente=nuevo;
 			
+		lista->numeroElementos++;
+		
 		return 1;
 
 	}

@@ -24,6 +24,8 @@ int Lista_InsertarFin(ListaEnlazada *lista, void *objeto) {
     ultimo->siguiente = nuevo;
     ancla->anterior = nuevo;
   }
+  
   lista->numeroElementos++;
+  //printf("NListaFin: %i",lista->numeroElementos);
   return 1;
 }

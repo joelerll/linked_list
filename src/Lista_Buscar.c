@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "miLista.h"
 
 ElementoLista *Lista_Buscar(ListaEnlazada *lista, void *objeto){
@@ -7,7 +8,8 @@ ElementoLista *Lista_Buscar(ListaEnlazada *lista, void *objeto){
 
   		ElementoLista *elem = NULL;
 
-		for (elem = Lista_Primero(lista); elem->objeto != NULL; elem = Lista_Siguiente(lista, elem)) {
+		for (elem = Lista_Primero(lista); elem != NULL; elem = Lista_Siguiente(lista, elem)) {
+			//printf("%lu - %lu\n", (long)objeto,(long)elem->objeto);
 		    if(elem->objeto==objeto){
 		    	return elem;
 		    }
@@ -15,6 +17,5 @@ ElementoLista *Lista_Buscar(ListaEnlazada *lista, void *objeto){
 
 	}
 	return NULL;
-
 
 }

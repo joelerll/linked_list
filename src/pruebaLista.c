@@ -5,8 +5,7 @@
 #include <assert.h>     /* assert */
 #include "miLista.h"
 
-//#define IMPRIMIR_LISTA
-
+#define IMPRIMIR_LISTA
 
 
 void ImprimirLista(ListaEnlazada *lista, int numeroElementos){

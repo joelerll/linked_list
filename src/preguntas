@@ -1,16 +1,5 @@
 ¿ancla->siguiente y ancla->anterior apuntan a NULL al momento de Inicializar_Lista?
-¿Lista_Buscar, como hace la comparación?
-void ImprimirLista(ListaEnlazada *lista, int numeroElementos){ ERROR
 //
-char num1 = 'a';
-  char num2 = 'a';
-
-  void *a = (void *)num1;
-  void *b = (void *)num2;
-
-  if(a==b){
-    printf("%c",a);
-    printf("SI");
-  }
-
-  en el printf se imprime a, por que? si deberia ser *a, ahí se debería imprimir a.
+Es permitido usar las mismas listas dentro de otra funcion?
+//
+Revisar si listainicio, lista anterior... y esas.. devuelven null si no existe el objeto

@@ -27,6 +27,7 @@ int Lista_InsertarInicio(ListaEnlazada *lista, void *objeto){
     ancla->siguiente = nuevo;
   }
   lista->numeroElementos++;
+  //printf("NListaInsertar: %i",lista->numeroElementos);
   return 1;
 
 }

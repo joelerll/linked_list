@@ -14,6 +14,8 @@ int Lista_InsertarDespues(ListaEnlazada *lista, void *objeto, ElementoLista *ele
 		elemento->siguiente=nuevo;
 		tmp->anterior=nuevo;
 
+		lista->numeroElementos++;
+
 		return 1;
 
 	}
