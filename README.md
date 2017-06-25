@@ -16,11 +16,19 @@ Para crear el ejecutable y la librería objeto compartida se debe ejecutar:
 $ make
 ```
 
-Esto creara el ejecutable en la carpeta bin/ y la librería compartida en la carpeta lib/
+Esto creara el ejecutable en la carpeta bin/ y la librería compartida en la carpeta lib/, tambien los archivo objeto de cada .c
+
+## Set Enviroment variable
+
+Si con make no anade la variable de entorno, anadirla manualmente
+
+```sh
+$ export LD_LIBRARY_PATH=$(pwd)/lib:$LD_LIBRARY_PATH
+```
 
 ## Como usar el watcher
 
-El archivo es para que ejecute un comando cuando cambia un archivo en cualquier carpeta que escojamos, el formato es:
+El archivo es para que ejecute un comando cuando cambia un archivo en cualquier carpeta que escojamos. El formato es:
 
 ```sh
 $ ./watcher [carpeta] [comando]

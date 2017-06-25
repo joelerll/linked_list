@@ -3,6 +3,7 @@ INCLUDE= -Iinclude/
 CFLAGS = -Wall
 CC = gcc
 SHARED = -shared -fPIC
+CCFLAGS = -Wl
 
 # folder estructura
 SRCDIR   = src
@@ -14,29 +15,36 @@ BIN_NAME = bin/prueba
 # objects
 MAIN_OBJ= obj/main.o
 PRUEBA_OBJ= obj/pruebaLista.o
+MAIN=src/pruebaLista.c
 
 # sources list
+CURRENT_FOLDER := $(shell pwd)
 SOURCES  := $(shell ls src | sed 's/\b.c\b/.o/'| egrep '^[A-Z]'| tr "\n" " ")
 OBJECTS := $(shell ls src | egrep '^[A-Z]' | sed 's/\b.c\b/.o/'| sed 's/^/obj\//' | tr "\n" " ")
 SOURCES_DINAMICO := $(shell ls src | egrep '^[A-Z]'| sed 's/^/src\//' | tr "\n" " ")
 
-all: prueba libmilista.so
+all: prueba
 
 help:
 	@fgrep -h "####" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/pruebaLista.o//'  | sed -e 's/(SOURCES)//' | sed -e 's/####//'
 
-prueba: $(SOURCES) pruebaLista.o
+prueba: libmilista.so include/miLista.h pruebaLista.o
 	@ echo "Creado el ejecutable prueba"
-	@ gcc $(OBJECTS) $(PRUEBA_OBJ) -o $(BIN_NAME)
+	@ gcc $(INCLUDE) -L$(CURRENT_FOLDER)/$(LIBDIR) $(CCFLAGS),-rpath=$(CURRENT_FOLDER)/$(LIBDIR) $(CFLAGS) -o $(BIN_NAME) $(PRUEBA_OBJ) -lmilista
+	@ # gcc $(CFLAGS) $(INCLUDE) -L$(CURRENT_FOLDER)/lib $(MAIN) -lmilista -o $(BIN_NAME)
 
 # Usado para pruebas locales
 test: $(SOURCES) main.o
 	gcc $(OBJECTS) $(MAIN_OBJ) -o $(BIN_NAME)
 
 # Generar archivo objecto compartido
-libmilista.so:
+libmilista.so: $(SOURCES)
 	@ $(CC) $(CFLAGS) $(INCLUDE) $(SHARED) $(SOURCES_DINAMICO) -o $(LIBDIR)/$@
 	@ echo "Creada la libreria compartida milista"
+
+# Generar pruebaLista.o
+pruebaLista.o: $(MAIN)
+	@ $(CC) $(CFLAGS) $(INCLUDE) -c $< -o $(OBJDIR)/$@
 
 # Generar los archivos .o
 %.o : $(SRCDIR)/%.c
@@ -44,6 +52,7 @@ libmilista.so:
 
 # Limpiar todos los archivos
 .PHONY: clean
+
 clean:
 	@ rm -f obj/*.o bin/prueba lib/*.so
 	@ echo "Borrado los archivos .o .so y ejecutables"
