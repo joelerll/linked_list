@@ -7,13 +7,13 @@ int Lista_InsertarInicio(ListaEnlazada *lista, void *objeto){
   if (!nuevo)
     return 0;
   nuevo->objeto = objeto;
-  if (lista->numeroElementos == 0) {
-    ElementoLista *ancla = &(lista->ancla);
-    ancla->anterior = nuevo;
-    ancla->siguiente = nuevo;
-    nuevo->siguiente = ancla;
-    nuevo->anterior = ancla;
-  } else {
+  if (lista->numeroElementos == 0) {           //La función inserterá un nuevo elemento al inicio de la
+    ElementoLista *ancla = &(lista->ancla);    //lista, donde el puntero siguiente del nuevo elemento
+    ancla->anterior = nuevo;                   //apuntará al elemento(primero) que se encontraba al inicio
+    ancla->siguiente = nuevo;                  //de la lista y el puntero anterior del nuevo elemento
+    nuevo->siguiente = ancla;                  //apuntará al elemento ancla. Finalmente el puntero siguiente
+    nuevo->anterior = ancla;                   //del elemeto ancla y el puntero anterior del elemento(primero)
+  } else {                                     //apuntarán al nuevo elemento.
     ElementoLista *ancla = &(lista->ancla);
     ElementoLista *primero = ancla->siguiente;
     primero->anterior = nuevo;
