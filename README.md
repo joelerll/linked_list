@@ -1,4 +1,4 @@
-<center> <h1>Proyecto Primer Termino Programacion de Sistemas</h1> </center>
+<center> <h1>Proyecto Primer Termino Programación de Sistemas</h1> </center>
 
 ## Intregrantes
 
@@ -6,17 +6,17 @@
 * Joel Rodriguez  [joelerll](https://github.com/joelerll)
 * Israel Cano  [IsraelCanoG](https://github.com/IsraelCanoG)
 
-## Descripcion
-Implementacion de listas doblemente enlazadas con un ancla que indica el inicio y fin de la lista
+## Descripción
+Implementación de listas doblemente enlazadas con un ancla que indica el inicio y fin de la lista
 
 ## Como compilar
-Para crear el ejecutable y la libreria objeto compartida se debe ejecutar:
+Para crear el ejecutable y la librería objeto compartida se debe ejecutar:
 
 ```sh
-> make
+$ make
 ```
 
-Esto creara el ejecutable en la carpeta bin/ y la liberia compartida en la carpeta lib/
+Esto creara el ejecutable en la carpeta bin/ y la librería compartida en la carpeta lib/
 
 ## Como usar el watcher
 
