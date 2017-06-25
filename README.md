@@ -1,29 +1,22 @@
-# Proyecto Primer Termino
+<center> <h1>Proyecto Primer Termino Programacion de Sistemas</h1> </center>
 
-## Estado de proyecto
+## Intregrantes
 
-_funciones_
+* Bosco Andrade  [Boscoand](https://github.com/Boscoand)
+* Joel Rodriguez  [joelerll](https://github.com/joelerll)
+* Israel Cano  [IsraelCanoG](https://github.com/IsraelCanoG)
 
-- [x] Lista_Inicializar
-- [x] Lista_Vacia
-- [x] Lista_Conteo
-- [ ] Lista_Buscar
-- [x] Lista_InsertarFin
-- [x] Lista_InsertarInicio
-- [x] Lista_Sacar
-- [ ] Lista_SacarTodos
-- [ ] Lista_InsertarDespues
-- [ ] Lista_InsertarAntes
-- [x] Lista_Primero
-- [x] Lista_Ultimo
-- [x] Lista_Siguiente
-- [x] Lista_Anterior
+## Descripcion
+Implementacion de listas doblemente enlazadas con un ancla que indica el inicio y fin de la lista
 
+## Como compilar
+Para crear el ejecutable y la libreria objeto compartida se debe ejecutar:
 
-_otros_
+```sh
+> make
+```
 
-- [ ] Documentacion
-- [ ] Comentarios
+Esto creara el ejecutable en la carpeta bin/ y la liberia compartida en la carpeta lib/
 
 ## Como usar el watcher
 
@@ -38,23 +31,3 @@ Para el proyecto se usara
 ```sh
 $ ./watcher src/ make test
 ```
-
-## Como comentar las funciones
-
-## Como trabajar con gdb
-
-## Documentacion
-
-## pagina de documentacion con graficas en vizjs
-
-## como compilar y tipos de compilacion
-
-## como probar los test
-
-## como probar la libreria.so
-
-## comandos make y el help
-
-## como documenta la libreria (estructura de datos)
-
-https://users.ece.cmu.edu/~eno/coding/CCodingStandard.html

@@ -22,8 +22,4 @@ void Lista_Sacar(ListaEnlazada *lista, ElementoLista *elemento){
 	tmpAnterior->siguiente=tmpSiguiente;
 	tmpSiguiente->anterior=tmpAnterior;
 	lista->numeroElementos--;
-
-	//free(elemento);
-
-	
 }

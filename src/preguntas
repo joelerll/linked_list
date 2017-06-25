@@ -1,5 +1,0 @@
-¿ancla->siguiente y ancla->anterior apuntan a NULL al momento de Inicializar_Lista?
-//
-Es permitido usar las mismas listas dentro de otra funcion?
-//
-Revisar si listainicio, lista anterior... y esas.. devuelven null si no existe el objeto

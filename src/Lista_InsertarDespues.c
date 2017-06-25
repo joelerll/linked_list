@@ -2,10 +2,7 @@
 #include "miLista.h"
 
 int Lista_InsertarDespues(ListaEnlazada *lista, void *objeto, ElementoLista *elemento){
-
 	if(lista->numeroElementos!=0){
-
-
 		ElementoLista *nuevo = (ElementoLista *)malloc(sizeof(ElementoLista));
 		ElementoLista *tmp = elemento->siguiente;
 		nuevo->objeto=objeto;
@@ -13,13 +10,8 @@ int Lista_InsertarDespues(ListaEnlazada *lista, void *objeto, ElementoLista *ele
 		nuevo->anterior=elemento;
 		elemento->siguiente=nuevo;
 		tmp->anterior=nuevo;
-
 		lista->numeroElementos++;
-
 		return 1;
-
 	}
 	return 0;
-
-
 }
