@@ -258,7 +258,7 @@ void CopiarListaPares(ListaEnlazada *lista, ListaEnlazada *listaPar){
 		}
 	}
 
-	//Eliminamos el ultimo elemento.	
+	//Eliminamos el ultimo elemento.
 	if (eliminar){
 		free(aEliminar);
 		eliminar = FALSE;
@@ -294,7 +294,7 @@ void IntercambiarElementos(ListaEnlazada *lista, ElementoLista **elemento1, Elem
 	//long valor_siguiente_elem2 = (long)(siguienteElem2)->objeto;
 
 	//printf(" elem1 %lu\n", (long)(*elemento1)->objeto);
-	//printf(" elem2 %lu\n", (long)(*elemento2)->objeto);	
+	//printf(" elem2 %lu\n", (long)(*elemento2)->objeto);
 
 	long valor_elem1 = (long)(*elemento1)->objeto;
 	long valor_elem2 = (long)(*elemento2)->objeto;
@@ -401,7 +401,7 @@ void OrdenarListaAscendente(ListaEnlazada *lista){
 			}
 			actual = siguiente;
 			minimoActual = actual;
-			//printf("Siguiente %lu\n", (long)siguiente->objeto);	
+			//printf("Siguiente %lu\n", (long)siguiente->objeto);
 		}
 
 		//siguiente = Lista_Siguiente(lista, actual);
@@ -423,7 +423,7 @@ void OrdenarListaAscendente(ListaEnlazada *lista){
 			}
 		}
 
-		//Aqui encontramos el minimo, 
+		//Aqui encontramos el minimo,
 		//printf("Minimo Actual %lu\n", (long)minimoActual->objeto);
 		//printf("Actual %lu\n", (long)actual->objeto);
 

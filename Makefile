@@ -1,8 +1,8 @@
 # gcc configuracion
 INCLUDE= -Iinclude/
-CFLAGS = -Wall
+CFLAGS = -Wall -fPIC
 CC = gcc
-SHARED = -shared -fPIC
+SHARED = -shared
 CCFLAGS = -Wl
 
 # folder estructura
@@ -30,7 +30,7 @@ help:
 
 prueba: libmilista.so include/miLista.h pruebaLista.o
 	@ echo "Creado el ejecutable prueba"
-	@ gcc $(INCLUDE) -L$(CURRENT_FOLDER)/$(LIBDIR) $(CCFLAGS),-rpath=$(CURRENT_FOLDER)/$(LIBDIR) $(CFLAGS) -o $(BIN_NAME) $(PRUEBA_OBJ) -lmilista
+	@ gcc -L$(CURRENT_FOLDER)/$(LIBDIR) $(CCFLAGS),-rpath=$(CURRENT_FOLDER)/$(LIBDIR) -Wall -o $(BIN_NAME) $(PRUEBA_OBJ) -lmilista
 	@ # gcc $(CFLAGS) $(INCLUDE) -L$(CURRENT_FOLDER)/lib $(MAIN) -lmilista -o $(BIN_NAME)
 
 # Usado para pruebas locales
@@ -39,7 +39,7 @@ test: $(SOURCES) main.o
 
 # Generar archivo objecto compartido
 libmilista.so: $(SOURCES)
-	@ $(CC) $(CFLAGS) $(INCLUDE) $(SHARED) $(SOURCES_DINAMICO) -o $(LIBDIR)/$@
+	@ $(CC) $(CFLAGS) $(INCLUDE) $(SHARED) $(OBJECTS) -o $(LIBDIR)/$@
 	@ echo "Creada la libreria compartida milista"
 
 # Generar pruebaLista.o
@@ -60,3 +60,4 @@ clean:
 # https://stackoverflow.com/questions/7004702/how-can-i-create-a-makefile-for-c-projects-with-src-obj-and-bin-subdirectories
 # http://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html#fn:1
 # https://ftp.gnu.org/old-gnu/Manuals/make-3.79.1/html_chapter/make_10.html
+# http://www.adp-gmbh.ch/cpp/gcc/create_lib.html#calc_mean_h
